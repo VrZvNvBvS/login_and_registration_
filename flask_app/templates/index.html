@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <title>Index</title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <form action="/register" method="post" class="col">
+        <div style="color: white; background-color: crimson">
+          {% with messages = get_flashed_messages(with_categories=True) %} {% if
+          messages %}
+          <div class="alert alert-danger bg-danger text-center text-dark" role="alert">
+            <strong>Registration Error!</strong>
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+          </div>
+          {% endif %} {% endwith %}
+        </div>
+        <h1 class="text-center text-primary">Register</h1>
+        <hr class="mb-4" />
+        <p>First Name:</p>
+        <input type="text" name="first_name" />
+        <p>Last Name:</p>
+        <input type="text" name="last_name" />
+        <p>Email:</p>
+        <input type="text" name="email" />
+        <p>Password:</p>
+        <input type="password" name="password" />
+        <p>Confirm Password:</p>
+        <input type="password" name="password_confirm" />
+        <input type="submit" name="Submit" class="btn btn-primary" />
+      </form>
+
+
+      <form action="/login" method="post" class="col">
+        {% with messages = get_flashed_messages(category_filter=['login']) %} {%
+        if messages %}
+        <div class="alert alert-danger text-center bg-danger text-dark" role="alert">
+          <strong>Login Error!!!</strong>
+          {% for message in messages %}
+          <p>{{message}}</p>
+          {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+        <h1 class="text-success">Login</h1>
+        <hr class="mb-4" />
+        <p>Email:</p>
+        <input type="text" name="email" />
+        <p>Password:</p>
+        <input type="password" name="password" />
+        <input type="submit" value="Login" class="btn btn-success" />
+      </form>
+    </div>
+  </body>
+</html>

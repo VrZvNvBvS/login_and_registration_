@@ -1,0 +1,43 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.col {
+  background: #333;
+  margin: 50px auto;
+  width: 40%;
+  height: fit-content;
+  padding: 50px;
+  border-radius: 5px;
+}
+.row {
+  gap: 40px;
+}
+p {
+  color: aliceblue;
+}
+h1 {
+  color: gold;
+}
+select, option, input {
+  border-radius: 5px;
+  border-color: blueviolet;
+  width: 100%;
+  color: #333;
+}
+#commentbox {
+  height: 100px;
+}
+select, input {
+  margin-bottom: 20px;
+}
+a {
+  margin-top: 20px;
+}
+.user_info {
+  color: #333;
+  background: white;
+  border-radius: 5px;
+  border-width: 20px;
+  border-color: blueviolet;
+  padding: 20px 5px;
+}
